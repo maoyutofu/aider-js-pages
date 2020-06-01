@@ -1,1 +1,114 @@
-Hello World
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aider JS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/css/uikit.min.css" />
+    <style>
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+            padding: 20px;
+            background: #1e87f0;
+            color: #fff;
+        }
+
+        .header .intro h2 {
+            color: #fff;
+            font-size: 50px;
+            font-weight: 600;
+        }
+
+        .header .intro .desc {
+            font-size: 30px;
+        }
+
+        .body {
+            padding: 20px;
+        }
+
+        .body .diagram {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .body img {
+            max-width: 100%;
+        }
+        
+        .body .diagram .desc p {
+            font-size: 18px;
+            line-height: 36px;
+            letter-spacing: 1px;
+        }
+
+        pre {
+            overflow-x: auto;
+        }
+
+        pre,
+        code {
+            color: black;
+        }
+
+        @media (min-width: 1024px) {
+            .body .diagram > div {
+                width: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="page">
+            <header class="header">
+                <div class="intro">
+                    <h2>介绍</h2>
+                    <p class="desc">Aider - 轻量的网站热门文章统计助手，为静态网站。</p>
+                </div>
+            </header>
+            <section class="body">
+                <div class="diagram">
+                    <div>
+                        <h3>架构图</h3>
+                        <p>
+                            <img src="./diagram.jpg" alt="" >
+                        </p>
+                    </div>
+                    <div class="desc">
+                        <h3>描述</h3>
+                        <p>Aider服务端基于Rust和MongoDB开发。
+                            提供两种接入方式：
+                            一种是在页面嵌入Aider提供的.js脚本文件；
+                            另外一种是使用open-api接入，需要自己处理数据逻辑，此种接入方式需要编程基础。
+                        </p>
+                        <h3>推荐！在页面嵌入Aider提供的.js脚本文件</h3>
+                        <p>
+                            <pre>
+<code>&lt;script src=&#x27;//dev-tang.com/aider-js/aider.619ca050.js&#x27; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    var aider = new Aider({
+        &quot;site_id&quot;: &quot;site_id&quot;
+    });
+    aider.render(document.getElementById(&#x27;aider&#x27;));
+&lt;/script&gt;</code>
+</pre>
+                        </p>
+                        <p>site_id申请请联系QQ邮箱36634584。请在邮件正文中说明网站名称和URL地址。</p>
+                    </div>
+                </div>
+                <hr class="uk-divider-icon">
+                <h3>案例</h3>
+                <p>
+                    <img src="./example.png" alt="">
+                </p>
+                <p><a href="https://dev-tang.com/post/2020/05/vue-uikit.html">访问案例页面</a></p>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
