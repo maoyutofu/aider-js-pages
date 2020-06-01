@@ -102,6 +102,38 @@
                     </div>
                 </div>
                 <hr class="uk-divider-icon">
+                <h3>修改默认样式</h3>
+                <p>如果想修改符合自己网站主题的样式，请参考下面css代码：</p>
+                <p>
+<pre><code>.aider-hot-list {
+    padding: 20px;
+    background: #fff;
+}
+.aider-hot-list li {
+    height: 30px;
+    line-height: 30px;
+    white-space:nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
+}
+.aider-hot-list li a {
+    color: #333;
+}
+@media (min-width: 768px) {
+    .aider-hot-list ul::after {
+        content:".";
+        display:block;
+        clear:both;
+        height:0;
+        visibility:hidden;
+    }
+    .aider-hot-list li {
+        width: 50%;
+        float: left;
+    }
+}</code></pre>
+                </p>
+                <hr class="uk-divider-icon">
                 <h3>案例</h3>
                 <p>
                     <img src="./example.png" alt="">
