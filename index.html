@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aider JS</title>
+    <title>Aider</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/css/uikit.min.css" />
     <style>
         .header {
@@ -35,7 +35,7 @@
             max-width: 100%;
         }
         
-        .body .diagram .desc p {
+        .body p {
             font-size: 18px;
             line-height: 36px;
             letter-spacing: 1px;
@@ -62,6 +62,15 @@
             }
         }
     </style>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?3acb1335b0d40a02c7294ea46d6ad01d";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>        
 </head>
 <body>
     <div id="app">
@@ -69,7 +78,7 @@
             <header class="header">
                 <div class="intro">
                     <h2>介绍</h2>
-                    <p class="desc">Aider - 轻量的网站热门文章统计助手，为静态网站。</p>
+                    <p class="desc">Aider - 轻量的网站热门文章组件，为静态网站。</p>
                 </div>
             </header>
             <section class="body">
@@ -81,7 +90,7 @@
                 </div>
                 <div class="desc">
                     <h3>描述</h3>
-                    <p>Aider服务端基于Rust和MongoDB开发。
+                    <p>Aider服务端基于Rust和MongoDB开发。网站接入aider-js后会采集网页浏览数据，通过render函数将浏览量排名前8条（可配置，最大支持20条）数据渲染到页面中。
                         提供两种接入方式：
                         一种是在页面嵌入Aider提供的.js脚本文件；
                         另外一种是使用open-api接入，需要自己处理数据逻辑，此种接入方式需要编程基础。
@@ -140,6 +149,14 @@ aider.render(document.getElementById(&#x27;aider&#x27;));
                         <img src="./example.png" alt="">
                     </p>
                     <p><a href="https://dev-tang.com/post/2020/05/vue-uikit.html">访问案例页面</a></p>
+                </div>
+
+                <div>
+                    <h3>关于隐私</h3>
+                    <p>网站接入：</p>
+                    <p>只需提供网站名称、网站URL</p>
+                    <p>数据采集：</p>
+                    <p>Aider仅采集标题、网页URL、点击量。不会采集IP、Cookies。</p>
                 </div>
             </section>
         </div>
