@@ -28,7 +28,12 @@
 
         .body {
             padding: 20px;
-            margin: 0 auto;
+        }
+
+        .body .diagram {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
         }
 
         .body img {
@@ -50,15 +55,9 @@
             color: black;
         }
 
-        @media (min-width: 768px) {
-            .body {
-                width: 768px;
-            }
-        }
-
         @media (min-width: 1024px) {
-            .body {
-                width: 1024px;
+            .body .diagram > div {
+                width: 50%;
             }
         }
     </style>
@@ -73,35 +72,37 @@
                 </div>
             </header>
             <section class="body">
-                <div>
-                    <h3>架构图</h3>
-                    <p>
-                        <img src="./diagram.jpg" alt="" >
-                    </p>
-                </div>
-                <div class="desc">
-                    <h3>描述</h3>
-                    <p>Aider服务端基于Rust和MongoDB开发。
-                        提供两种接入方式：
-                        一种是在页面嵌入Aider提供的.js脚本文件；
-                        另外一种是使用open-api接入，需要自己处理数据逻辑，此种接入方式需要编程基础。
-                    </p>
-                    <h3>推荐！在页面嵌入Aider提供的.js脚本文件</h3>
-                    <p>
-                        <pre>
+                <div class="diagram">
+                    <div>
+                        <h3>架构图</h3>
+                        <p>
+                            <img src="./diagram.jpg" alt="" >
+                        </p>
+                    </div>
+                    <div class="desc">
+                        <h3>描述</h3>
+                        <p>Aider服务端基于Rust和MongoDB开发。
+                            提供两种接入方式：
+                            一种是在页面嵌入Aider提供的.js脚本文件；
+                            另外一种是使用open-api接入，需要自己处理数据逻辑，此种接入方式需要编程基础。
+                        </p>
+                        <h3>推荐！在页面嵌入Aider提供的.js脚本文件</h3>
+                        <p>
+                            <pre>
 <code>&lt;script src=&#x27;//dev-tang.com/aider-js/aider.619ca050.js&#x27; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 &lt;script&gt;
-var aider = new Aider({
-    &quot;site_id&quot;: &quot;site_id&quot;
-});
-aider.render(document.getElementById(&#x27;aider&#x27;));
+    var aider = new Aider({
+        &quot;site_id&quot;: &quot;site_id&quot;
+    });
+    aider.render(document.getElementById(&#x27;aider&#x27;));
 &lt;/script&gt;</code>
 </pre>
-                    </p>
-                    <p>site_id申请请联系QQ邮箱36634584。请在邮件正文中说明网站名称和URL地址。</p>
+                        </p>
+                        <p>site_id申请请联系QQ邮箱36634584。请在邮件正文中说明网站名称和URL地址。</p>
+                    </div>
                 </div>
-                <div>
-                    <h3>修改默认样式</h3>
+                <hr class="uk-divider-icon">
+                <h3>修改默认样式</h3>
                 <p>如果想修改符合自己网站主题的样式，请参考下面css代码：</p>
                 <p>
 <pre><code>.aider-hot-list {
@@ -132,15 +133,12 @@ aider.render(document.getElementById(&#x27;aider&#x27;));
     }
 }</code></pre>
                 </p>
-                </div>
-
-                <div>
-                    <h3>案例</h3>
-                    <p>
-                        <img src="./example.png" alt="">
-                    </p>
-                    <p><a href="https://dev-tang.com/post/2020/05/vue-uikit.html">访问案例页面</a></p>
-                </div>
+                <hr class="uk-divider-icon">
+                <h3>案例</h3>
+                <p>
+                    <img src="./example.png" alt="">
+                </p>
+                <p><a href="https://dev-tang.com/post/2020/05/vue-uikit.html">访问案例页面</a></p>
             </section>
         </div>
     </div>
